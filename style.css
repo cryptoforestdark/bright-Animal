@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('bckground.png') no-repeat center center fixed;
     background-size: cover;
@@ -13,11 +13,11 @@ body {
 
 .login-container {
     background-color: rgba(0,0,0,0.6);
-    padding: 25px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     text-align: center;
-    width: 320px;
+    width: 70%;
 }
 
 input[type="text"], input[type="password"] {
@@ -59,30 +59,13 @@ button:hover {
     color: #00ff00;
 }
 /* Mobile view adjustments */
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 18px;
-    }
-    
-    h1 {
-        font-size: 24px;
-    }
-
-    .login-container, .success-container {
-        width: 90%;
-        padding: 15px;
-    }
-
-    input[type="text"], input[type="password"], button {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .terms {
-        font-size: 12px !important;
-    }
-
-    .flag-container {
-        font-size: 16px;
-    }
+@media (max-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .card {
+    flex: 1 1 100%; /* 3 per row */
+  }
 }
