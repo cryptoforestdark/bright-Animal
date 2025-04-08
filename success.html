@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTF Success!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .flag-container {
+            text-align: center;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 1.1em;
+            background-color: #222;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            word-break: break-all;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #00ff00;
+            background-color: #4CAF50;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body id="success-page">
+    <div class="success-container">
+        <h1>🌲 Welcome to the Dark Side! 🌲</h1>
+        <p>
+            Congratulations, brave explorer! You've successfully entered the hidden realm of Cryptic Canopy. 
+            The woodland creatures have prepared a special secret for you—capture the flag below and treasure it safely. 
+            Remember, every visit reveals a new secret!
+        </p>
+    
+        <p>Your Capture-the-Flag (CTF) challenge flag is:</p>
+    
+        <div class="flag-container">
+            <span id="ctf-flag"></span>
+        </div>
+    
+        <a href="index.html">Logout</a>
+    </div>
+    
+
+    <script>
+        function generateRandomString(length) {
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
+        function generateCTFFlag() {
+            const prefix = "CTF{";
+            const suffix = "}";
+            const randomPart = generateRandomString(16);
+            return prefix + randomPart + suffix;
+        }
+
+        document.getElementById('ctf-flag').textContent = generateCTFFlag();
+    </script>
+</body>
+</html>
+
+
